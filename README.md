@@ -62,7 +62,7 @@ Painel **InfoCombustível Brasil**, conectado à view higienizada, com:
 - Gráficos de Preço Médio e Quantidade de Distribuidores por Região/Estado, com paleta de cores consistente para destacar a série/categoria principal.
 - Tabela detalhada de coletas (região, estado, município, data, bandeira, combustível, valor).
 
-![Dashboard](docs/img/dashboard_completo_power_bi.png)
+![Dashboard](docs/img/dashboard_filtro_etanol_gasolina.png)
 
 📁 Ver `docs/img/` para prints do painel.
 
