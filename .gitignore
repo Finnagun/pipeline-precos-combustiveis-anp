@@ -1,0 +1,16 @@
+# Credenciais e configurações sensíveis
+python/config.py
+config.py
+.env
+
+# Dados brutos e arquivos pesados
+data/*.csv
+
+# Arquivos temporários do Power BI
+*.pbix.ghost
+*.tmp
+
+# Ambientes virtuais e arquivos do Python/Jupyter
+__pycache__/
+.ipynb_checkpoints/
+venv/
