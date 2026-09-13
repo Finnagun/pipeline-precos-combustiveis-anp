@@ -1,6 +1,6 @@
 # InfoCombustível Brasil — Análise de Preços de Combustíveis (2018–2025)
 
-Projeto de análise de dados de ponta a ponta sobre a evolução dos preços de combustíveis no Brasil, usando dados públicos da ANP. O objetivo foi construir um pipeline completo — da ingestão bruta até um dashboard executivo — capaz de responder perguntas de negócio reais: como os preços se comportaram ao longo do tempo, onde estão as maiores disparidades regionais e quando compensa abastecer com Etanol em vez de Gasolina.
+Projeto de análise de dados de ponta a ponta sobre a evolução dos preços de combustíveis no Brasil, usando dados públicos da ANP. O objetivo foi construir um pipeline completo desde a ingestão bruta até um dashboard executivo, capaz de responder perguntas de negócio reais: como os preços se comportaram ao longo do tempo, onde estão as maiores disparidades regionais e quando compensa abastecer com Etanol em vez de Gasolina.
 
 **Autor:** Carlos Henrique Freitas  
 **Fonte de dados:** [Série Histórica de Preços de Combustíveis e de GLP — ANP](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis)  
@@ -49,7 +49,7 @@ O notebook (`notebooks/eda_combustiveis.ipynb`) cobre:
 - **EDA:** distribuição de preços por combustível, evolução temporal (2018–2025), disparidade geográfica por região/estado, e a métrica de paridade Etanol/Gasolina (regra dos 70%).
 
 **Principais achados:**
-- O Diesel atingiu pico de R$ 6,73/L em 2022, impulsionado por tensões geopolíticas no mercado internacional de petróleo.
+- O Diesel S10 registrou média de R$ 6,73/L em 2022, puxado por tensões geopolíticas no mercado internacional de petróleo
 - A Região Norte apresenta os maiores preços médios (ex.: AC a R$ 5,91/L) por custos logísticos; o RJ se destaca no Sudeste por alta carga tributária de ICMS.
 - Nos estados produtores (MT, SP, GO, MG), o Etanol foi predominantemente mais vantajoso que a Gasolina ao longo da série, com exceção do choque atípico de 2021.
 
@@ -61,6 +61,8 @@ Painel **InfoCombustível Brasil**, conectado à view higienizada, com:
 - Heatmap de preço médio por Estado x Combustível.
 - Gráficos de Preço Médio e Quantidade de Distribuidores por Região/Estado, com paleta de cores consistente para destacar a série/categoria principal.
 - Tabela detalhada de coletas (região, estado, município, data, bandeira, combustível, valor).
+
+![Dashboard](docs/img/dashboard_completo_power_bi.png)
 
 📁 Ver `docs/img/` para prints do painel.
 
@@ -106,3 +108,14 @@ Painel **InfoCombustível Brasil**, conectado à view higienizada, com:
 ├── README.md
 └── requirements.txt
 ```
+---
+
+## Conclusão
+
+Este projeto percorreu o ciclo completo de um produto de dados: ingestão, modelagem, tratamento, análise exploratória e visualização executiva — usando apenas dados públicos e ferramentas amplamente adotadas no mercado (KNIME, PostgreSQL, Python, Power BI).
+
+Além do resultado técnico, a análise gerou recomendações de negócio concretas:
+
+- **Gestão de frotas:** veículos flex operando no Sudeste e Centro-Oeste (especialmente MT, SP, GO e MG) tendem a se beneficiar mais do Etanol, enquanto operações no Norte, Nordeste e Sul tendem a manter a Gasolina como opção mais vantajosa.
+- **Monitoramento tributário:** variações estaduais de ICMS (como no caso do RJ) têm impacto tão relevante na formação de preço quanto a proximidade logística das refinarias — vale acompanhamento contínuo.
+- **Gestão de risco no transporte rodoviário:** dada a volatilidade do Diesel S10 observada no período, contratos de frete podem se beneficiar de cláusulas de reajuste atreladas à variação desse combustível.
